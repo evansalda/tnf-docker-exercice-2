@@ -1,4 +1,4 @@
-# Exercice 2 - Démarrer un conteneur Docker
+# Exercice 2 - Accéder à un conteneur Docker
 
 L'image **simple-prompt-docker** de la registry **kodekloud** est une image Docker qui effectue les actions suivantes :
 
