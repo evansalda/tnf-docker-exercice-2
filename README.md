@@ -77,7 +77,29 @@ Exécutez les commandes `pwd` puis `ls` pour respectivement identifier le réper
 
 Exécutez la commande `exit` pour sortir du conteneur, puis la commande `docker ps` pour constater que le conteneur a été arrêté suite à votre sortie.
 
-## 4. Suppression des images
+## 4. Le port-mapping
+
+Lors de l'exercice 1, vous avez lancé un conteneur httpd mais il n'existait aucun moyen d'accéder à l'application qu'il hébergeait. En effet, il est nécessaire d'effectuer du **port-mapping** pour accéder à l'application hébergée par un conteneur.
+
+Pour rappel, le port-mapping permet de "mapper" un port du Docker Host avec le port du conteneur que son application écoute :
+
+![port mapping](./img/schema-port-mapping.png)
+
+Exécutez la commande `docker run -p 8080:80 httpd` pour lancer un conteneur httpd en mappant le **port 8080 du Docker Host** avec le **port 80 du conteneur** :
+
+![httpd port mapping](./img/httpd-port-mapping.png)
+
+Ouvrez une nouvelle fenêtre de termial et exécutez la commande `docker ps` pour observer les informations affichées sur ce conteneur :
+
+![ps port mapping](./img/docker-ps-port-mapping.png)
+
+Notez que le port-mapping configuré est affiché dans la colonne PORTS.
+
+Ouvrez maintenant le navigateur de votre choix et accédez à l'URL http://localhost:8080 pour accéder à l'application hébergée par le conteneur :
+
+![httpd homepage](./img/httpd-homepage.png)
+
+## 5. Suppression des images
 
 La commande **docker rmi** permet de supprimer une image présente sur un Docker Host.
 
